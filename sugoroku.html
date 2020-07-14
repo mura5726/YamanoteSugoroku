@@ -1,0 +1,188 @@
+<input type="button" value="サイコロ" onclick="randam()">
+<input type="button" value="ok" onclick="geocode()">
+<div id="map_canvas" style="width:750px; height:750px"></div>
+
+<script type="text/javascript"
+src="http://maps.google.com/maps/api/js?sensor=false "></script>
+<script type="text/javascript">
+var sum=0;
+function randam() { a = Math.floor(Math.random() * 6 + 1);
+alert(a+"駅進みます");
+sum += a;
+}
+
+/*
+   *  地図を表示
+   */
+var map;
+
+function initMap() {
+if(sum == 0){
+window.alert("次は大崎ー、大崎。");
+   var latlng = new google.maps.LatLng(35.6197,139.728553);
+}
+else if(sum == 1){
+window.alert("次は品川ー、品川。");
+   var latlng = new google.maps.LatLng(35.630152,139.74044);
+}
+else if(sum == 2){
+window.alert("次は田町ー、田町。");
+   var latlng = new google.maps.LatLng(35.645736,139.747575);
+}
+else if(sum == 3){
+window.alert("次は浜松町ー、浜松町。");
+   var latlng = new google.maps.LatLng(35.655646,139.756749);
+}
+else if(sum == 4){
+window.alert("次は新橋ー、新橋。");
+   var latlng = new google.maps.LatLng(35.665498,139.75964);
+}
+else if(sum == 5){
+window.alert("次は有楽町ー、有楽町。");
+   var latlng = new google.maps.LatLng(35.675069,139.763328);
+}
+else if(sum == 6){
+window.alert("次は東京ー、東京。");
+   var latlng = new google.maps.LatLng(35.681382,139.766084);
+}
+else if(sum == 7){
+window.alert("次は神田ー、神田。");
+   var latlng = new google.maps.LatLng(35.69169,139.770883);
+}
+else if(sum == 8){
+window.alert("次は秋葉原ー、秋葉原。");
+   var latlng = new google.maps.LatLng(35.698683,139.774219);
+}
+else if(sum == 9){
+window.alert("次は御徒町ー、御徒町。");
+   var latlng = new google.maps.LatLng(35.707438,139.774632);
+}
+else if(sum == 10){
+window.alert("次は上野ー、上野。");
+   var latlng = new google.maps.LatLng(35.713768,139.777254);
+}
+else if(sum == 11){
+window.alert("次は鴬谷ー、鴬谷。");
+   var latlng = new google.maps.LatLng(35.720495,139.778837);
+}
+else if(sum == 12){
+window.alert("次は日暮里ー、日暮里。");
+   var latlng = new google.maps.LatLng(35.727772,139.770987);
+}
+else if(sum == 13){
+window.alert("次は西日暮里ー、西日暮里。");
+   var latlng = new google.maps.LatLng(35.732135,139.766787);
+}
+else if(sum == 14){
+window.alert("次は田畑ー、田畑。");
+   var latlng = new google.maps.LatLng(35.738062,139.76086);
+}
+else if(sum == 15){
+window.alert("次は駒込ー、駒込。");
+   var latlng = new google.maps.LatLng(35.736489,139.746875);
+}
+else if(sum == 16){
+window.alert("次は巣鴨ー、巣鴨。");
+   var latlng = new google.maps.LatLng(35.733492,139.739345);
+}
+else if(sum == 17){
+window.alert("次は大塚ー、大塚。");
+   var latlng = new google.maps.LatLng(35.731401,139.728662);
+}
+else if(sum == 18){
+window.alert("次は池袋ー、池袋。");
+   var latlng = new google.maps.LatLng(35.728926,139.71038);
+}
+else if(sum == 19){
+window.alert("次は目白ー、目白。");
+   var latlng = new google.maps.LatLng(35.721204,139.706587);
+}
+else if(sum == 20){
+window.alert("次は高田馬場ー、高田馬場。");
+   var latlng = new google.maps.LatLng(35.712285,139.703782);
+}
+else if(sum == 21){
+window.alert("次は新大久保ー、新大久保。");
+   var latlng = new google.maps.LatLng(35.701306,139.700044);
+}
+else if(sum == 22){
+window.alert("次は新宿ー、新宿。");
+   var latlng = new google.maps.LatLng(35.690921,139.700258);
+}
+else if(sum == 23){
+window.alert("次は代々木ー、代々木。");
+   var latlng = new google.maps.LatLng(35.683061,139.702042);
+}
+else if(sum == 24){
+window.alert("次は原宿ー、原宿。");
+   var latlng = new google.maps.LatLng(35.670168,139.702687);
+}
+else if(sum == 25){
+window.alert("次は渋谷ー、渋谷。");
+   var latlng = new google.maps.LatLng(35.658517,139.701334);
+}
+else if(sum == 26){
+window.alert("次は恵比寿ー、恵比寿。");
+   var latlng = new google.maps.LatLng(35.64669,139.710106);
+}
+else if(sum == 27){
+window.alert("次は目黒ー、目黒。");
+   var latlng = new google.maps.LatLng(35.633998,139.715828);
+}
+else if(sum == 28){
+window.alert("次は五反田ー、五反田。");
+   var latlng = new google.maps.LatLng(35.626446,139.723444);
+}
+   var myOptions = {
+     zoom: 15,
+     center: latlng,
+     mapTypeId: google.maps.MapTypeId.ROADMAP
+   };
+   map = new google.maps.Map(document.getElementById("map_canvas"),
+myOptions);
+/*
+   *  ピンを立てる関数
+   */
+function pin(lat, lng, text) {
+   var myLatlng = new google.maps.LatLng(lat,lng);
+   var marker = new google.maps.Marker({
+     position: myLatlng,
+     map: map,
+     title: text
+   });
+}
+}
+/*
+   *  OKボタンが押された際に呼び出される関数
+   */
+function geocode() {
+   // 地図の初期化
+   initMap();
+
+   // geocoderオブジェクトの取得
+   var geocoder = new google.maps.Geocoder();
+
+   // geocoderを使うためのオブジェクトの準備
+   var request = {
+     address: address
+   };
+
+   // Geocoderの呼び出し
+   geocoder.geocode(request, listResult);
+}
+
+
+/*
+   *  Geocoderのコールバック関数
+   */
+function listResult(results, status) {
+   // エラー処理
+   if (status != google.maps.GeocoderStatus.OK) {
+     window.alert("ジオコーディング失敗");
+     return;
+   }
+}
+
+initMap();
+
+</script>
